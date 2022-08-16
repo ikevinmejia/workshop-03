@@ -27,10 +27,11 @@ const composeEnhancers =
 
 const reducers = combineReducers({
   login: userReducer,
+  persisted: persistedReducer,
 });
 
 export const store = createStore(
-  persistedReducer,
+  reducers,
   composeEnhancers(applyMiddleware(thunk))
 );
 
