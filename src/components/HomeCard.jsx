@@ -1,11 +1,11 @@
 import React from "react";
 import { GoLocation } from "react-icons/go";
 
-const HomeCard = ({ img, price, titulo, km }) => {
+const HomeCard = ({ img, price, titulo, km, id, funcion }) => {
   return (
-    <div className="overflow-hidden transition-shadow duration-300 border-transparent h-44 w-44 rounded-xl bg-secondary hover:shadow-md">
+    <div id={id} className="overflow-hidden transition-shadow duration-300 border-transparent h-44 w-44 rounded-xl bg-secondary hover:shadow-md">
       <figure className="w-full h-28">
-        <img src={img} alt="imgcard" className="object-cover w-full h-full" />
+        <img src={img} alt="imgcard" className="object-cover w-full h-full" id={id} onClick={funcion} />
       </figure>
       <div className="flex flex-col w-full gap-1 px-1 h-max text-greyColor">
         <h2 className="mt-2 text-sm font-medium">{`$ ${price}`}</h2>
