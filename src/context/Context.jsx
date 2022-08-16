@@ -9,12 +9,16 @@ const Context = ({ children }) => {
   const handleSider = () => {
     setShowSider(!showSider);
   };
+  const handleModal = () => {
+    setShowModal(!showModal);
+  };
 
   const data = {
     showModal,
     setShowModal,
     handleSider,
     showSider,
+    handleModal,
   };
 
   return <Contexto.Provider value={data}>{children}</Contexto.Provider>;

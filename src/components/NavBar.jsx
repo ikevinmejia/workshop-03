@@ -16,12 +16,6 @@ export default function NavBar() {
     setShowModal(!showModal);
   };
 
-  const [value, setValue] = React.useState("recents");
-
-  //   const handleChange = (event, newValue) => {
-  //     setValue(newValue);
-  //   };
-
   return (
     <BottomNavigation
       sx={{ width: "100%" }}
@@ -48,7 +42,7 @@ export default function NavBar() {
         value="notifications"
         icon={<NotificationsIcon />}
       />
-      <Link to="/profile">
+      <Link to="/home">
         <BottomNavigationAction
           label="Profile"
           value="profile"

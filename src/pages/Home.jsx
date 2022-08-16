@@ -8,9 +8,11 @@ import { db } from "../Firebase/firebaseConfig";
 import { collection, doc, getDocs, setDoc } from "firebase/firestore";
 import SideBar from "../components/SideBar";
 import { Contexto } from "../context/Context";
+import FormAddProduct from "../components/FormAddProduct";
+import Modal from "../components/Modal/Modal";
 
 const Home = () => {
-  const { showSider, handleSider } = useContext(Contexto);
+  const { showSider, handleSider, showModal } = useContext(Contexto);
   const dispatch = useDispatch();
   const [prueba, setPrueba] = useState([]);
   const dataReduxUser = useSelector((state) => state.login);
@@ -90,6 +92,11 @@ const Home = () => {
         <NavBar />
       </div>
       {showSider && <SideBar />}
+      {showModal && (
+        <Modal>
+          <FormAddProduct />
+        </Modal>
+      )}
     </div>
   );
 };

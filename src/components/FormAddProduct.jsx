@@ -1,25 +1,13 @@
-import React, { useContext, useState } from "react";
-import { Context } from "../context/ContextProvider";
-import { useForm } from "../Hooks/useForm";
+import { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { actionNewWorkout } from "../Redux/Actions/actionNewWorkout";
-import {
-  doc,
-  setDoc,
-  collection,
-  updateDoc,
-  getDoc,
-  getDocs,
-  addDoc,
-} from "firebase/firestore";
-import { db } from "../Firebase/firebaseConfig";
-import { useEffect } from "react";
+import { Context } from "../context/Context";
+import { useForm } from "../Hooks/useForm";
 
-function FormAddWorkout() {
+function FormAddProduct() {
   const dispatch = useDispatch();
+  //   const { handleModal } = useContext(Context);
   const [imgWorkout, setImgWorkout] = useState("");
   const [arreglo, setArreglo] = useState("");
-  const { handleModal } = useContext(Context);
   const dataReduxUser = useSelector((state) => state.login);
 
   const { formValue, handleInputChangeName, reset } = useForm({
@@ -72,7 +60,7 @@ function FormAddWorkout() {
 
     await updateDoc(user, { workouts: workouts });
     reset();
-    handleModal();
+    // handleModal();
   };
 
   const handleCloudinary = () => {
@@ -96,7 +84,7 @@ function FormAddWorkout() {
             <button
               type="button"
               className="absolute top-3 right-2.5 ml-auto inline-flex items-center rounded-lg bg-transparent p-1.5 text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-white"
-              onClick={handleModal}
+              //   onClick={handleModal}
             >
               <svg
                 aria-hidden="true"
@@ -123,14 +111,14 @@ function FormAddWorkout() {
                     htmlFor="kindWorkout"
                     className="block mb-2 text-sm font-medium text-gray-900 "
                   >
-                    Muscle to work
+                    Headline
                   </label>
                   <input
                     type="text"
                     name="kindWorkout"
                     id="kindWorkout"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-secondary outline-none focus:border-primary"
-                    placeholder="triceps, back..."
+                    placeholder="Headline"
                     onChange={handleInputChangeName}
                     required
                   />
@@ -140,14 +128,14 @@ function FormAddWorkout() {
                     htmlFor="titleWorkout"
                     className="block mb-2 text-sm font-medium text-gray-900 "
                   >
-                    Title of workout
+                    Category
                   </label>
                   <input
                     type="text"
                     name="titleWorkout"
                     id="titleWorkout"
                     className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-secondary outline-none focus:border-primary"
-                    placeholder="Up and down workout"
+                    placeholder="Category"
                     onChange={handleInputChangeName}
                     required
                   />
@@ -158,14 +146,14 @@ function FormAddWorkout() {
                     htmlFor="time"
                     className="block mb-2 text-sm font-medium text-gray-900 "
                   >
-                    Duration
+                    Phone
                   </label>
                   <input
                     type="number"
                     name="time"
                     id="time"
-                    placeholder="23 min"
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-secondary outline-none focus:border-primary"
+                    placeholder="123456798"
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-greyColor outline-none focus:border-primary"
                     onChange={handleInputChangeName}
                     required
                   />
@@ -178,7 +166,7 @@ function FormAddWorkout() {
                     Upload file
                   </label>
                   <input
-                    className="block w-full h-8 text-sm border border-gray-300 rounded-lg cursor-pointer bg-gray-50 text-secondary file:mr-4 file:cursor-pointer file:border-0 file:bg-mainBgColor file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-700 focus:outline-none"
+                    className="block w-full h-8 text-sm border border-gray-300 rounded-lg cursor-pointer bg-gray-50 text-greyColor file:mr-4 file:cursor-pointer file:border-0 file:bg-mainBgColor file:py-2 file:px-4 file:text-sm file:font-semibold file:text-white hover:file:bg-gray-700 focus:outline-none"
                     id="files"
                     type="button"
                     name="file"
@@ -192,23 +180,22 @@ function FormAddWorkout() {
                     htmlFor="message"
                     className="block mb-2 text-sm font-medium text-gray-900 "
                   >
-                    Description
+                    Location
                   </label>
-                  <textarea
+                  <input
                     id="message"
-                    rows="4"
-                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-secondary outline-none focus:border-primary "
-                    placeholder="Short description"
+                    className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-greyColor outline-none focus:border-primary "
+                    placeholder="Canada"
                     name="description"
                     onChange={handleInputChangeName}
-                  ></textarea>
+                  />
                 </div>
                 <div className="flex justify-between">
                   <div className="flex items-start"></div>
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-lg border border-secondary bg-transparent px-5 py-2.5 text-center text-sm font-medium text-mainBgColor transition-colors duration-500 hover:bg-mainBgColor hover:text-white focus:outline-none"
+                  className="w-full rounded-lg border border-slate-400 bg-transparent px-5 py-2.5 text-center text-sm font-medium text-greyColor transition-colors duration-500 hover:border-transparent hover:bg-primary focus:outline-none"
                 >
                   Add new workout
                 </button>
@@ -221,4 +208,4 @@ function FormAddWorkout() {
   );
 }
 
-export default FormAddWorkout;
+export default FormAddProduct;
