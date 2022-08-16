@@ -9,7 +9,7 @@ import {
 import thunk from "redux-thunk";
 import {
   persistStore,
-  persistReducer
+  // persistReducer
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
@@ -18,7 +18,7 @@ const persistConfig = {
   storage,
 };
 
-const persistedReducer = persistReducer(persistConfig, userReducer);
+// const persistedReducer = persistReducer(persistConfig, userReducer);
 
 const composeEnhancers =
   (typeof window !== "undefined" &&
@@ -27,7 +27,7 @@ const composeEnhancers =
 
 const reducers = combineReducers({
   login: userReducer,
-  persisted: persistedReducer,
+  // persisted: persistedReducer,
 });
 
 export const store = createStore(
