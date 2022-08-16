@@ -1,7 +1,8 @@
-import React from "react";
+import { Navigate } from "react-router-dom"
 
-const PrivateRouter = () => {
-  return <div>PrivateRouter</div>;
-};
+export const PrivateRouter = ({ isAutentication, children }) => {
 
-export default PrivateRouter;
+  return isAutentication
+    ? children
+    : <Navigate to='/' />
+}

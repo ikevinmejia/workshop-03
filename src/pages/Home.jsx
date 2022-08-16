@@ -3,8 +3,31 @@ import HomeCard from "../components/HomeCard";
 import HomeHeader from "../components/HomeHeader";
 import NavBar from "../components/NavBar";
 import SliderHome from "../components/SliderHome";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+import { db } from "../Firebase/firebaseConfig";
+import { doc, setDoc } from "firebase/firestore";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const dataReduxUser = useSelector((state) => state.login);
+  console.log(dataReduxUser);
+  const dataUser = async () => {
+    const data = {
+      displayName: dataReduxUser.displayName,
+      email: dataReduxUser.email,
+      photoURL: dataReduxUser.photoURL,
+      uid: dataReduxUser.uid,
+      phone: 3112429428,
+      location:
+        "Me la tiene es que mamar en reversa si quiere saber donde vivo",
+    };
+    await setDoc(doc(db, "users", dataReduxUser.uid), data);
+  };
+
+  useEffect(() => {
+    dataUser();
+  }, []);
+
   return (
     <div>
       <HomeHeader />
@@ -26,6 +49,8 @@ const Home = () => {
         </div>
       </main>
       <NavBar />
+
+      {/* {<SideBar></SideBar>} */}
     </div>
   );
 };
