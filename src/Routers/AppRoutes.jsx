@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Introduce from "../components/Introduce";
+import Descripcion from "../pages/Descripcion";
 import EditProfile from "../pages/EditProfile";
 import Inicio from "../pages/Inicio";
 
@@ -56,6 +57,7 @@ function AppRoutes() {
         />
         */}
         <Route path="/EditProfile" element={<EditProfile />} />
+        <Route path="/Descripcion" element={<Descripcion />} />
       </Routes>
     </BrowserRouter>
   );

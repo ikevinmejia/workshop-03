@@ -52,18 +52,18 @@ const EditProfile = () => {
           <BiEditAlt size={25} />
         </div>
 
-        <div className="mx-auto flex h-10 w-11/12 max-w-md items-center justify-between rounded-2xl bg-primary px-8">
+        <div className="mx-auto flex h-10 w-11/12 max-w-md cursor-pointer items-center justify-between rounded-2xl bg-primary px-8">
           <input
-            className="text-lg text-[#797979]"
+            className=" cursor-pointer text-lg text-[#797979]"
             type="button"
             value="Notifications"
           />
           <BiInfinite size={25} />
         </div>
 
-        <div className="mx-auto flex h-10 w-11/12 max-w-md items-center justify-between rounded-2xl bg-primary px-8">
+        <div className="mx-auto flex h-10 w-11/12 max-w-md cursor-pointer items-center justify-between rounded-2xl bg-primary px-8">
           <input
-            className="text-lg text-[#797979]"
+            className=" cursor-pointer text-lg text-[#797979]"
             type="button"
             value="Payment"
           />
