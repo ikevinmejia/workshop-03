@@ -7,13 +7,27 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^0.27.2",
+    "env": "^0.0.2",
+    "env-install": "^1.0.0",
+    "firebase": "^9.9.2",
+    "flowbite": "^1.5.1",
+    "flowbite-react": "^0.1.5",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-circular-progressbar": "^2.1.0",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.4.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "redux": "^4.2.0",
+    "redux-thunk": "^2.4.1",
+    "vite-plugin-require": "^1.0.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^1.0.7",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.5",
+    "tailwind-scrollbar": "^1.3.1",
     "vitawind": "^2.2.4",
     "vite": "^2.7.2"
   }
