@@ -36,12 +36,11 @@ const Home = () => {
     const products = await getDocs(collection(db, "products"));
 
     products.forEach((doc) => {
-      // if (prueba.length < 1) {
-      setPrueba((prev) => [...prev, doc.data()]);
-      // }
+      if (prueba.length < 1) {
+        setPrueba((prev) => [...prev, doc.data()]);
+      }
     });
   };
-
   return (
     <div>
       <div
