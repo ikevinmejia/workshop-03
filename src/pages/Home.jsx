@@ -4,6 +4,7 @@ import HomeHeader from "../components/HomeHeader";
 import NavBar from "../components/NavBar";
 import SliderHome from "../components/SliderHome";
 import { useDispatch, useSelector } from "react-redux/es/exports";
+import { Link, useNavigate } from "react-router-dom";
 import { db } from "../Firebase/firebaseConfig";
 import { collection, doc, getDocs, setDoc } from "firebase/firestore";
 import SideBar from "../components/SideBar";
@@ -14,6 +15,8 @@ const Home = () => {
   const dispatch = useDispatch();
   const [prueba, setPrueba] = useState([]);
   const dataReduxUser = useSelector((state) => state.login);
+  const navigate = useNavigate();
+
   const dataUser = async () => {
     const data = {
       displayName: dataReduxUser.displayName,
@@ -41,6 +44,12 @@ const Home = () => {
       }
     });
   };
+
+  const handleNavigate = ({ target }) => {
+    navigate("/Descripcion");
+    localStorage.setItem("idImg", target.id);
+  };
+
   return (
     <div>
       <div
@@ -75,13 +84,15 @@ const Home = () => {
             <h2 className="text-greyColor">Recomended</h2>
             <div className="flex w-full flex-wrap items-center justify-center gap-2">
               {prueba &&
-                prueba.map(({ img, price, name, km }, idx) => (
+                prueba.map(({ img, price, name, km, id }, idx) => (
                   <HomeCard
                     key={idx}
+                    id={id}
                     img={img}
                     price={price}
                     titulo={name}
                     km={km}
+                    funcion={handleNavigate}
                   />
                 ))}
             </div>
