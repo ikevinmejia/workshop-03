@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Introduce from "../components/Introduce";
+import Home from "../pages/Home";
 import Inicio from "../pages/Inicio";
 
 function AppRoutes() {
@@ -54,6 +55,14 @@ function AppRoutes() {
           }
         />
         */}
+        <Route
+          path="/home"
+          element={
+            // <PublicRouter isAutentication={auth}>
+            <Home />
+            // </PublicRouter>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );
