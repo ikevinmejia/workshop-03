@@ -4,6 +4,7 @@ import HomeHeader from "../components/HomeHeader";
 import NavBar from "../components/NavBar";
 import SliderHome from "../components/SliderHome";
 import { useDispatch, useSelector } from "react-redux/es/exports";
+import { Link, useNavigate } from "react-router-dom";
 import { db } from "../Firebase/firebaseConfig";
 import { collection, doc, getDocs, setDoc } from "firebase/firestore";
 import SideBar from "../components/SideBar";
@@ -16,6 +17,8 @@ const Home = () => {
   const dispatch = useDispatch();
   const [prueba, setPrueba] = useState([]);
   const dataReduxUser = useSelector((state) => state.login);
+  const navigate = useNavigate();
+
   const dataUser = async () => {
     const data = {
       displayName: dataReduxUser.displayName,
@@ -43,6 +46,12 @@ const Home = () => {
       }
     });
   };
+
+  const handleNavigate = ({ target }) => {
+    navigate("/Descripcion");
+    localStorage.setItem("idImg", target.id);
+  };
+
   return (
     <div>
       <div
