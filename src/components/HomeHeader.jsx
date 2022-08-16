@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { Avatar } from "flowbite-react";
 import { IoNotificationsOutline } from "react-icons/io5";
+
+import { useSelector } from "react-redux";
 import { Contexto } from "../context/Context";
-// import { Context } from "../context/ContextProvider";
-// import { useSelector } from "react-redux";
 
 function HomeHeader() {
   const { handleSider } = useContext(Contexto);
-  //   const { photoURL, displayName } = useSelector((state) => state.login);
+  // const { displayName } = useSelector((state) => state.login);
 
   return (
     <div className="flex items-center justify-between max-w-lg p-2 mx-auto ">
@@ -21,7 +21,8 @@ function HomeHeader() {
         />
         <h1 className="font-normal text-greyColor">
           Hi!
-          <br /> 'Ralph Edwards'
+          {/* <br /> {displayName} */}
+          <br /> 'nombre apellido'
         </h1>
       </div>
       <IoNotificationsOutline color="#5d5e5e" size="25" />
