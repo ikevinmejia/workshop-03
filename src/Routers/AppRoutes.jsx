@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Introduce from "../components/Introduce";
+import EditProfile from "../pages/EditProfile";
 import Inicio from "../pages/Inicio";
 
 function AppRoutes() {
@@ -54,6 +55,7 @@ function AppRoutes() {
           }
         />
         */}
+        <Route path="/EditProfile" element={<EditProfile />} />
       </Routes>
     </BrowserRouter>
   );
