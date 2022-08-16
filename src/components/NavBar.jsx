@@ -7,10 +7,10 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import PersonIcon from "@mui/icons-material/Person";
 import { Link } from "react-router-dom";
-// import { Contexto } from "../context/Context";
+import { Contexto } from "../context/Context";
 
 export default function NavBar() {
-  //   const { setShowModal, showModal } = React.useContext(Contexto);
+  const { setShowModal, showModal } = React.useContext(Contexto);
 
   //   const onClick = () => {
   //     setShowModal(!showModal);
