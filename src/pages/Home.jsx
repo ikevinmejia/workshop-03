@@ -40,8 +40,13 @@ const Home = () => {
     });
   };
 
+  const handleClick = () => {
+    alert("Nuthelk mama burra");
+  };
+
   return (
     <div>
+      <button onClick={handleClick}>Pinchame</button>
       <HomeHeader />
       <SliderHome />
       <main className="mx-auto flex max-w-lg flex-col items-center justify-between gap-5 p-2 ">
