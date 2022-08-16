@@ -20,11 +20,9 @@ function AppRoutes() {
           element={
             // <PublicRouter isAutentication={auth}>
             <Introduce
-              title={"Discipline"}
-              text={"Develop discipline in yourself train every day"}
+              title={"Sell"}
+              text={"List your items for sale and see how fast they get bought"}
               textButton={"Next"}
-              imgMobile={"bg-b2"}
-              imgLarge={"md:bg-b2f"}
               goTo="/b3"
             />
             // </PublicRouter>
@@ -35,8 +33,10 @@ function AppRoutes() {
           element={
             // <PublicRouter isAutentication={auth}>
             <Introduce
-              title={"Character"}
-              text={"Cultivate in you an iron character for training"}
+              title={"Buy"}
+              text={
+                "See and choose products suitable products or products that are nearby"
+              }
               textButton={"Registration"}
               imgMobile={"bg-b3"}
               imgLarge={"md:bg-b3f"}
