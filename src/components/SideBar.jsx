@@ -14,7 +14,7 @@ const SideBar = () => {
             img="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
             rounded={true}
           />
-          <h1 className="font-normal text-black">
+          <h1 className="font-medium text-black">
             Hi!
             <br /> Nombre Apellido
           </h1>
@@ -23,26 +23,30 @@ const SideBar = () => {
 
       </div>
 
-      <div className="flex items-center gap-4 mt-12">
-        <p>Settings</p>
+      <div className="flex items-center gap-4 mt-12 font-medium">
+        <p>Active ads</p>
       </div>
-      <div className="flex items-center gap-4 mt-8">
+      <div className="flex items-center gap-4 mt-4 font-medium">
 
-        <p>Notification</p>
+        <p>Inactive ads</p>
       </div>
-      <div className="flex items-center gap-4 mt-8">
+      <div className="flex items-center gap-4 mt-4 font-medium">
 
-        <p>Activity</p>
+        <p>Payment</p>
       </div>
-      <div className="flex items-center gap-4 mt-8">
+      <div className="flex items-center gap-4 mt-4 font-medium">
 
-        <p>Subscription type</p>
+        <p>Terms of use</p>
       </div>
-      <div className="flex items-center gap-4 mt-8">
+      <div className="flex items-center gap-4 mt-4 font-medium">
 
-        <p>FAQ</p>
+        <p>Security policy</p>
       </div>
-      <div className="flex items-center gap-4 mt-8">
+      <div className="flex items-center gap-4 mt-4 font-medium">
+
+        <p>About Us</p>
+      </div>
+      <div className="flex items-center gap-4 mt-12 font-bold">
         <button
           onClick={() => {
             auth.signOut();
