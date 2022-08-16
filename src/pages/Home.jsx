@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomeCard from "../components/HomeCard";
 import HomeHeader from "../components/HomeHeader";
 import NavBar from "../components/NavBar";

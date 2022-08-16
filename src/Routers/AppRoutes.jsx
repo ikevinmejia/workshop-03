@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Introduce from "../components/Introduce";
 import Home from "../pages/Home";
+import Descripcion from "../pages/Descripcion";
+import EditProfile from "../pages/EditProfile";
 import Inicio from "../pages/Inicio";
 import { Login } from "../pages/Login";
 import { PrivateRouter } from "./PrivateRouter";
@@ -83,6 +85,8 @@ function AppRoutes() {
             </PrivateRouter>
           }
         />
+        <Route path="/EditProfile" element={<EditProfile />} />
+        <Route path="/Descripcion" element={<Descripcion />} />
       </Routes>
     </BrowserRouter>
   );
