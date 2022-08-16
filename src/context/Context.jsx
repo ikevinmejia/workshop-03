@@ -1,6 +1,6 @@
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 
-const contexto = createContext();
+const Contexto = createContext();
 
 const Context = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
@@ -10,7 +10,7 @@ const Context = ({ children }) => {
     setShowModal,
   };
 
-  return <contexto.Provider value={data}>{children}</contexto.Provider>;
+  return <Contexto.Provider value={data}>{children}</Contexto.Provider>;
 };
 
-export default Context;
+export { Contexto, Context };

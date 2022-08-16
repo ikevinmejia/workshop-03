@@ -12,11 +12,11 @@ import { Contexto } from "../context/Context";
 export default function NavBar() {
   const { setShowModal, showModal } = React.useContext(Contexto);
 
-  //   const onClick = () => {
-  //     setShowModal(!showModal);
-  //   };
+  const onClick = () => {
+    setShowModal(!showModal);
+  };
 
-  //   const [value, setValue] = React.useState("recents");
+  const [value, setValue] = React.useState("recents");
 
   //   const handleChange = (event, newValue) => {
   //     setValue(newValue);
@@ -38,7 +38,7 @@ export default function NavBar() {
         icon={<SearchIcon />}
       />
       <BottomNavigationAction
-        // onClick={onClick}
+        onClick={onClick}
         label="Add"
         value="add"
         icon={<AddCircleIcon />}

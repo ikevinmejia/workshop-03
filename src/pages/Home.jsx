@@ -36,8 +36,22 @@ const Home = () => {
         <div className="flex flex-col w-full gap-3">
           <h2 className="text-greyColor">Recently viewed</h2>
           <div className="flex flex-wrap items-center justify-center w-full gap-2">
-            <HomeCard />
-            <HomeCard />
+            <HomeCard
+              img={
+                "https://help.apple.com/assets/613FDE81C88FF868634BFD43/613FDE85C88FF868634BFD52/es_419/7d204cd60ff1fce24cf6d11f24cd210a.png"
+              }
+              price={"300"}
+              titulo="Mac"
+              km={"34"}
+            />
+            <HomeCard
+              img={
+                "https://doctormovil.co/wp-content/uploads/2021/10/iphone-11-todos-lila-e1637895926871.png"
+              }
+              price={"300"}
+              titulo="Iphone"
+              km={"34"}
+            />
           </div>
         </div>
         <div className="flex flex-col w-full gap-3">
