@@ -49,10 +49,10 @@ const Home = () => {
       >
         <HomeHeader />
         <SliderHome />
-        <main className="flex flex-col items-center justify-between max-w-lg gap-5 p-2 mx-auto ">
-          <div className="flex flex-col w-full gap-3">
+        <main className="mx-auto flex max-w-lg flex-col items-center justify-between gap-5 p-2 ">
+          <div className="flex w-full flex-col gap-3">
             <h2 className="text-greyColor">Recently viewed</h2>
-            <div className="flex flex-wrap items-center justify-center w-full gap-2">
+            <div className="flex w-full flex-wrap items-center justify-center gap-2">
               <HomeCard
                 img={
                   "https://help.apple.com/assets/613FDE81C88FF868634BFD43/613FDE85C88FF868634BFD52/es_419/7d204cd60ff1fce24cf6d11f24cd210a.png"
@@ -71,9 +71,9 @@ const Home = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col w-full gap-3">
+          <div className="flex w-full flex-col gap-3">
             <h2 className="text-greyColor">Recomended</h2>
-            <div className="flex flex-wrap items-center justify-center w-full gap-2">
+            <div className="flex w-full flex-wrap items-center justify-center gap-2">
               {prueba &&
                 prueba.map(({ img, price, name, km }, idx) => (
                   <HomeCard
