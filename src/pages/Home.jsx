@@ -1,17 +1,18 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import HomeCard from "../components/HomeCard";
 import HomeHeader from "../components/HomeHeader";
 import NavBar from "../components/NavBar";
 import SliderHome from "../components/SliderHome";
 import { useDispatch, useSelector } from "react-redux/es/exports";
 import { db } from "../Firebase/firebaseConfig";
-import { doc, setDoc } from "firebase/firestore";
+import { collection, doc, getDocs, setDoc } from "firebase/firestore";
 import SideBar from "../components/SideBar";
 import { Contexto } from "../context/Context";
 
 const Home = () => {
   const { showSider, handleSider } = useContext(Contexto);
   const dispatch = useDispatch();
+  const [prueba, setPrueba] = useState([]);
   const dataReduxUser = useSelector((state) => state.login);
   const dataUser = async () => {
     const data = {
@@ -28,10 +29,26 @@ const Home = () => {
 
   useEffect(() => {
     dataUser();
+    calzon();
   }, []);
+
+  const calzon = async () => {
+    const products = await getDocs(collection(db, "products"));
+
+    products.forEach((doc) => {
+      // if (prueba.length < 1) {
+      setPrueba((prev) => [...prev, doc.data()]);
+      // }
+    });
+  };
+
+  const pichu = () => {
+    console.log(prueba);
+  };
 
   return (
     <div>
+      <button onClick={pichu}>AQQQQQQQQQQQQQQQQQQQQQ</button>
       <div
         onClick={showSider ? handleSider : null}
         className={showSider ? "h-screen blur-md md:blur-none  " : "h-screen"}
@@ -63,8 +80,16 @@ const Home = () => {
           <div className="flex flex-col w-full gap-3">
             <h2 className="text-greyColor">Recomended</h2>
             <div className="flex flex-wrap items-center justify-center w-full gap-2">
-              <HomeCard />
-              <HomeCard />
+              {prueba &&
+                prueba.map(({ img, price, name, km }, idx) => (
+                  <HomeCard
+                    key={idx}
+                    img={img}
+                    price={price}
+                    titulo={name}
+                    km={km}
+                  />
+                ))}
             </div>
           </div>
         </main>
