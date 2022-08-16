@@ -1,15 +1,35 @@
-import React from "react";
+import { doc, getDoc } from "firebase/firestore";
+import React, { useState, useEffect } from "react";
 import { BiBookmark, BiMap } from "react-icons/bi";
+import { db } from "../Firebase/firebaseConfig";
 
 const Descripcion = () => {
+  const mela = localStorage.getItem("idImg");
+  const [chupa, setChupa] = useState();
+  const [imgs, setImg] = useState();
+  const [titulos, setTitulos] = useState();
+  const [precio, setPrecio] = useState();
+  const [kms, setKms] = useState();
+
+  useEffect(() => {
+    pantalon();
+  }, []);
+
+  const pantalon = async () => {
+    const productoid = await getDoc(doc(db, "products", mela));
+    setChupa(productoid.data());
+    if (chupa !== null) {
+      setImg(chupa.img);
+      setTitulos(chupa.name);
+      setPrecio(chupa.price);
+      setKms(chupa.km);
+    }
+  };
+
   return (
     <div className="container mx-auto">
       <div className="flex flex-col items-center justify-center">
-        <img
-          className="h-52 w-full max-w-md"
-          src="https://res.cloudinary.com/dnont3pur/image/upload/v1660678107/Workshop-3/Img_4_cp6ykq.png"
-          alt="icon"
-        />
+        <img className="h-52 w-full max-w-md" src={imgs} alt="icon" />
         <div className="flex h-5 w-full justify-center gap-2">
           <div className="h-2 w-10 rounded-full bg-primary md:h-4 md:w-16"></div>
           <div className="h-2 w-2 rounded-full bg-primary md:h-4 md:w-4"></div>
@@ -19,11 +39,11 @@ const Descripcion = () => {
       </div>
       <div className="flex flex-col">
         <div className="flex max-w-md items-center justify-between px-5 md:mx-auto md:gap-10 ">
-          <h1>Macbook air 2015 core i3</h1>
+          <h1>{titulos}</h1>
           <BiBookmark size={20} />
         </div>
         <div className="flex px-5 md:justify-center">
-          <p>759 $</p>
+          <p>{precio} $</p>
         </div>
         <div className="mt-5 flex justify-evenly text-[#474747]">
           <button className="h-8 w-2/5 max-w-xs rounded-3xl border-2 border-primary text-center">
@@ -53,7 +73,7 @@ const Descripcion = () => {
         <h1>Denver, Colorado USA</h1>
       </div>
       <div className="flex items-center px-5 text-sm text-[#474747] md:justify-center">
-        <p>34 kilometers from you</p>
+        <p>{kms} kilometers from you</p>
       </div>
       <div className="mt-5 flex items-center px-5 text-[#474747] md:justify-center">
         <p>Similar ads</p>

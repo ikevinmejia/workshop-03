@@ -86,13 +86,15 @@ const Home = () => {
             <h2 className="text-greyColor">Recomended</h2>
             <div className="flex flex-wrap items-center justify-center w-full gap-2">
               {prueba &&
-                prueba.map(({ img, price, name, km }, idx) => (
+                prueba.map(({ img, price, name, km, id }, idx) => (
                   <HomeCard
                     key={idx}
+                    id={id}
                     img={img}
                     price={price}
                     titulo={name}
                     km={km}
+                    funcion={handleNavigate}
                   />
                 ))}
             </div>
