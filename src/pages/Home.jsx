@@ -42,13 +42,8 @@ const Home = () => {
     });
   };
 
-  const pichu = () => {
-    console.log(prueba);
-  };
-
   return (
     <div>
-      <button onClick={pichu}>AQQQQQQQQQQQQQQQQQQQQQ</button>
       <div
         onClick={showSider ? handleSider : null}
         className={showSider ? "h-screen blur-md md:blur-none  " : "h-screen"}
