@@ -29,6 +29,9 @@ function Inicio() {
           text={"Choose products available add to favorites and then buy"}
           textButton={"Next"}
           goTo="/b2"
+          img={
+            "https://res.cloudinary.com/ikevinmejia/image/upload/v1660695064/Svg_tlstr9.png"
+          }
         />
       )}
     </div>

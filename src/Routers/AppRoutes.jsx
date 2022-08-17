@@ -47,6 +47,9 @@ function AppRoutes() {
                 }
                 textButton={"Next"}
                 goTo="/b3"
+                img={
+                  "https://res.cloudinary.com/ikevinmejia/image/upload/v1660695107/Svg_1_pcoiwy.png"
+                }
               />
             </PublicRouter>
           }
@@ -64,6 +67,9 @@ function AppRoutes() {
                 imgMobile={"bg-b3"}
                 imgLarge={"md:bg-b3f"}
                 goTo="/login"
+                img={
+                  "https://res.cloudinary.com/ikevinmejia/image/upload/v1660695122/Svg_2_ffwkmj.png"
+                }
               />
             </PublicRouter>
           }
